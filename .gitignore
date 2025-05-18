@@ -1,0 +1,22 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+
+.project
+.classpath
+.cproject
+.settings/
+bin/
+.buildpath
+
+# Maven
+.mvn/
+!mvn/wrapper/maven-wrapper.jar
+**/target/
+
+
+# Custom: exclude .workspace
+.metadata/
