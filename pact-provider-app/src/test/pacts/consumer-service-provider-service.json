@@ -1,0 +1,45 @@
+{
+  "consumer": {
+    "name": "consumer-service"
+  },
+  "provider": {
+    "name": "provider-service"
+  },
+  "messages": [
+    {
+      "description": "cancel mission command",
+      "providerStates": [
+        {
+          "name": "mission with ID exists"
+        }
+      ],
+      "contents": {
+        "missionId": "abc123",
+        "stateTime": "2025-05-25T12:00:00Z",
+        "requestedByUserId": "user-42"
+      },
+      "matchingRules": {
+        "body": {
+          "$.missionId": {
+            "match": "type"
+          },
+          "$.stateTime": {
+            "match": "timestamp",
+            "format": "yyyy-MM-dd'T'HH:mm:ssXXX"
+          },
+          "$.requestedByUserId": {
+            "match": "type"
+          }
+        }
+      },
+      "metadata": {
+        "contentType": "application/json"
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
